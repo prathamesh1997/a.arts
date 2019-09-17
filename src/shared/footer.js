@@ -31,10 +31,10 @@ export function Footer(){
         <React.Fragment>
             <footer className={classes.footer}>
             <Typography variant="h6" align="center" gutterBottom>
-                 Contact Us
+                 Contact Us or Whatsapp for orders
             </Typography>
             <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                 +91 9990099999
+                 +91 9619559916
              </Typography>
              <Copyright />
             </footer>

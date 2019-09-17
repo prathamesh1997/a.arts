@@ -10,6 +10,11 @@ import Ganpati from '../static/images/ganpati.jpg';
 import Brooch_2 from '../static/images/brooch_2.jpg';
 import Rumal_1 from '../static/images/rumal_1.jpg';
 import Brooch_3 from '../static/images/brooch_3.jpg';
+import Bangles_1 from '../static/images/bangles_1.jpg';
+import Decor_1 from '../static/images/decr_1.jpg';
+import WoolCraft_1 from '../static/images/wool_craft_1.jpg';
+import WoolCraft_2 from '../static/images/wool_craft_2.jpg';
+import WoolCraft_3 from '../static/images/wool_craft_3.jpg';
 
 const useStyles = makeStyles(theme=>({
     contentDisplay:{
@@ -35,7 +40,12 @@ const cards =[{image:`${Brooch_1}`,title:'Brooch',description:'Hand made Brooch'
               {image:`${Ganpati}`,title:'Ganpati Bappa',description:'Ganpati murti.'},
               {image:`${Brooch_2}`,title:'Brooch',description:'Hand made Brooch'},
               {image:`${Rumal_1}`,title:'Woolen craft',description:'Made by wool.'},
-              {image:`${Brooch_3}`,title:'Brooch',description:'Hand made Brooch'}
+              {image:`${Brooch_3}`,title:'Brooch',description:'Hand made Brooch'},
+              {image:`${Bangles_1}`,title:'Bangles',description:'Hand made Bangles'},
+              {image:`${Decor_1}`,title:'Decorative Material',description:'Hand made Decorative Material'},
+              {image:`${WoolCraft_1}`,title:'Woolen craft',description:'Made by wool'},
+              {image:`${WoolCraft_2}`,title:'Woolen craft',description:'Made by wool'},
+              {image: `${WoolCraft_3}`,title:'Woolen craft',description:'Made by wool'},
             ]
 
 export function ArtsDisplay(){
