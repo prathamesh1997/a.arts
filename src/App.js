@@ -3,8 +3,10 @@ import React from 'react';
 import { Header , Footer } from './shared';
 import { Arts , ArtsDisplay } from './components';
 
-import { makeStyles , createMuiTheme } from '@material-ui/core';
+import {  createMuiTheme } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
+import { Whatsapp } from './static/svg';
+import '../src/App.css';
 
 const theme = createMuiTheme({
    palette:{
@@ -29,6 +31,7 @@ function App() {
                 <ArtsDisplay/>
             </Header>
             <Footer/>
+            <Whatsapp width="15%"/>
        </ThemeProvider>
     </React.Fragment>
   );
