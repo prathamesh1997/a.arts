@@ -2,7 +2,7 @@ import React from 'react';
 export function Whatsapp(props) {
 	return (
 		<React.Fragment>
-			<a href="https://wa.me/91961955916"  target="_blank" className="whatsapp">
+			<a href="https://wa.me/919619559916"  target="_blank" className="whatsapp">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					xmlnsXlink="http://www.w3.org/1999/xlink"
