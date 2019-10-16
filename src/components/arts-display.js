@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useEffect , useState } from 'react';
 
 import { Typography, Container , Grid , Card , CardMedia , CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
@@ -15,6 +15,9 @@ import Decor_1 from '../static/images/decr_1.jpg';
 import WoolCraft_1 from '../static/images/wool_craft_1.jpg';
 import WoolCraft_2 from '../static/images/wool_craft_2.jpg';
 import WoolCraft_3 from '../static/images/wool_craft_3.jpg';
+
+const URL ="https://api.airtable.com/v0/appIgDm5muOF5pp9f/arts";
+const API_KEY ="keyshSCaYispgW1hT";
 
 const useStyles = makeStyles(theme=>({
     contentDisplay:{
@@ -51,6 +54,21 @@ const cards =[{image:`${Brooch_1}`,title:'Brooch',description:'Hand made Brooch'
 export function ArtsDisplay(){
 
     const classes = useStyles();
+    const [state,setState] = useState()
+
+    useEffect(()=>{
+         fetch(URL,{
+             headers:{
+                Authorization:`Bearer ${API_KEY}`
+             }
+         }).then(response=>{
+             response.json().then(json=>{
+                 setState(json.records)
+             })
+         })
+    },[])
+
+    console.log(state)
 
     return(
         <React.Fragment>
