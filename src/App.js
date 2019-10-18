@@ -6,7 +6,8 @@ import { Arts , ArtsDisplay } from './components';
 import {  createMuiTheme } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import { Whatsapp } from './static/svg';
-import '../src/App.css';
+
+import './App.css'
 
 const theme = createMuiTheme({
    palette:{
@@ -31,7 +32,9 @@ function App() {
                 <ArtsDisplay/>
             </Header>
             <Footer/>
-            <Whatsapp width="15%"/>
+            <a href="https://wa.me/919619559916" target="_blank">
+              <Whatsapp/>
+            </a>
        </ThemeProvider>
     </React.Fragment>
   );

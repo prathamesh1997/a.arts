@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useEffect , useState } from 'react';
 
 import { Typography, Container , Grid , Card , CardMedia , CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
@@ -15,6 +15,9 @@ import Decor_1 from '../static/images/decr_1.jpg';
 import WoolCraft_1 from '../static/images/wool_craft_1.jpg';
 import WoolCraft_2 from '../static/images/wool_craft_2.jpg';
 import WoolCraft_3 from '../static/images/wool_craft_3.jpg';
+
+const URL ="https://api.airtable.com/v0/appIgDm5muOF5pp9f/arts";
+const API_KEY ="keyP1d65emmlZSGkZ";
 
 const useStyles = makeStyles(theme=>({
     contentDisplay:{
@@ -51,32 +54,46 @@ const cards =[{image:`${Brooch_1}`,title:'Brooch',description:'Hand made Brooch'
 export function ArtsDisplay(){
 
     const classes = useStyles();
+    const [state,setState] = useState()
+
+    useEffect(()=>{
+         fetch(URL,{
+             headers:{
+                Authorization:`Bearer ${API_KEY}`
+             }
+         }).then(response=>{
+             response.json().then(json=>{
+                 setState(json.records)
+             })
+         })
+    },[])
 
     return(
         <React.Fragment>
                 <Container maxWidth="md"  className={classes.contentDisplay}>
                     <Grid container spacing={4}>
-                       {
-                           cards.map(data=>(
-                                    <Grid item key="123" xs={12} sm={6} md={4}>
-                                    <Card className={classes.card}>
-                                        <CardMedia
-                                            className={classes.cardMedia}
-                                            image={data.image}
-                                            title={data.title}
-                                        />
-                                        <CardContent className={classes.cardContent}>
-                                            <Typography gutterBottom variant="h5" component="h2" align="center">
-                                                {data.title}
-                                            </Typography>
-                                            <Typography align="center">
-                                                {data.description}
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
-                                </Grid>
-                           ))
-                       }
+                      {
+                          state &&
+                          state.map(data=>(
+                                <Grid item key={data.id} xs={12} sm={6} md={4}>
+                                        <Card className={classes.card}>
+                                            <CardMedia
+                                                className={classes.cardMedia}
+                                                image={data.fields.image[0].url}
+                                                title={data.fields.title}
+                                            />
+                                            <CardContent className={classes.cardContent}>
+                                                <Typography gutterBottom variant="h5" component="h2" align="center">
+                                                    {data.fields.title}
+                                                </Typography>
+                                                <Typography align="center">
+                                                    {data.fields.description}
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                 </Grid>
+                          ))
+                      }
                     </Grid>
                 </Container>
         </React.Fragment>

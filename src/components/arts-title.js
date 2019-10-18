@@ -3,6 +3,7 @@ import React from 'react';
 import { Typography, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
+
 const useStyles = makeStyles(theme=>({
     content:{
         backgroundColor:theme.palette.background.papers,
@@ -24,6 +25,7 @@ export function Arts(props){
                 <Typography variant="h5" align="center" color="textSecondary" paragraph> 
                    We make handmade artifacts which suits today's trends.
                 </Typography>
+              
             </Container>
            </div>
         </React.Fragment>
