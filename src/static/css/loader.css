@@ -1,0 +1,39 @@
+.loaderWrapper{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+   }
+   .loading-theme-light{
+       background-color: #fff;
+       color: #000;
+   }
+   .loaderImge{
+       width: 2.5%;
+       animation: rotation 1s infinite linear;
+       z-index: 1000;
+   }
+   
+   @keyframes rotation {
+       from {
+           transform: rotate(0deg);
+       }
+       to{
+           transform: rotate(359deg);
+       }
+   }
+   
+   @media screen and (max-width: 768px){
+       .loaderImge{
+           width: 5%;
+       }
+   }
+   
+   @media screen and (max-width :480px){
+       .loaderImge{
+           width: 7%;
+       }
+   }
